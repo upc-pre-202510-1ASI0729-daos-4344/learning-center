@@ -1,59 +1,60 @@
-# LearningCenter
+# ACME Learning Center Web Application (learning-center)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+## Summary
 
-## Development server
+ACME Learning Center Application (Angular Framework Edition), illustrating CRUD behavior and in-app navigation, with Angular Material and Angular Router. It also uses a mock API de [Beeceptor](https://beeceptor.com/).   
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
+Project features include:
+
+- CRUD operations for Course Management.
+- Material Design-based components.
+- Integration with a mock API.
+- In-app navigation.
+- Environment configuration.
+- Domain-Driver Design approach.
+
+## Documentation
+The documentation is available in the `docs` folder. It includes:
+- User Stories are available in the [docs/user-stories.md](docs/user-stories.md) file.
+
+## Frameworks and Libraries
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+
+It also uses the following dependencies:
+
+- Angular Material (https://material.angular.io/).
+- ngx-translate ( https://github.com/ngx-translate/core ).
+- ngx-translate/http-loader (https://github.com/ngx-translate/http-loader).
+
+## Mock API setup
+
+Run the following commands to start the fake API server:
+To use the Mock API:
+  - Input a project name (e.g. myprojectname)
+  - Click "Create Moke Server" then setup a CRUD route going to "Mocking Rules" -> "Additional Route Types" -> "Setup a CRUD Route"
+  - Under "Entity Configuration" set the "API path i" as /api/courses
+  - The Rest API path to get all the courses, for a project name "myprojectname", should be `https://myprojectname.free.beeceptor.com/api/users`  
+  - Using curl send some post request to have some courses, for instance:
+````bash
+ curl -H 'Content-Type: application/json' \
+      -d '{ "title":"TypeScript","description":"This course is about TypeScript.", "completed": true}' \
+      -X POST \
+      https://myprojectname.free.beeceptor.com/api/courses
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Serve the frontend application
+Run `npm install`
+Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Build
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
