@@ -1,0 +1,10 @@
+<p>courses works!</p>
+
+@if (courses$ | async; as courses) {
+
+  @for (course of courses; track course.id) {
+    <p>
+      {{ course.title }}
+    </p>
+  }
+}
