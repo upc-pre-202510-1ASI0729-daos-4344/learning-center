@@ -40,7 +40,7 @@ To use the Mock API:
   - Using curl send some post request to have some courses, for instance:
 ````bash
  curl -H 'Content-Type: application/json' \
-      -d '{ "title":"TypeScript","description":"This course is about TypeScript.", "completed": true}' \
+      -d '{ "title":"TypeScript","description":"This course is about TypeScript.", "available": true}' \
       -X POST \
       https://myprojectname.free.beeceptor.com/api/courses
 ```
