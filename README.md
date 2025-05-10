@@ -1,4 +1,4 @@
-# ACME Learning Center Web Application (learning-center)
+# Learning Center Web Application (learning-center)
 
 ## Summary
 
