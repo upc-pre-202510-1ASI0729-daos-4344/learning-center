@@ -9,20 +9,15 @@
       <section>
 
         <div class="example-button-row">
-          <a mat-raised-button routerLink="/home-component" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-          <a mat-raised-button routerLink="/about-component" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
-          <a mat-raised-button routerLink="/courses-component" routerLinkActive="active" ariaCurrentWhenActive="page">Courses</a>
+          <a mat-raised-button routerLink="/home-component" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'home' | translate }}</a>
+          <a mat-raised-button routerLink="/about-component" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'about' | translate }}</a>
+          <a mat-raised-button routerLink="/courses-component" routerLinkActive="active" ariaCurrentWhenActive="page">{{ 'courses' | translate }}</a>
         </div>
       </section>
 
-
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-
       <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="en">en</mat-button-toggle>
-        <mat-button-toggle value="es">es</mat-button-toggle>
+        <mat-button-toggle value="en" (click)="setLanguage('en')" [checked]="true">en</mat-button-toggle>
+        <mat-button-toggle value="es" (click)="setLanguage('es')">es</mat-button-toggle>
       </mat-button-toggle-group>
 
     </mat-toolbar>
@@ -44,9 +39,6 @@
 
         <router-outlet />
 
-        @for (content of fillerContent; track content) {
-          <p>{{content}}</p>
-        }
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
